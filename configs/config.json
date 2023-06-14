@@ -1,0 +1,12 @@
+{
+    "format_config": {
+        "DATE_FORMAT": "YYYY-MM-DD HH:mm:ss",
+        "DISPLAY_DATE_FORMAT": "DD-MM-YYYY HH:mm:ss",
+        "bodyParserLimit": "5mb",
+        "bodyParserExtended": false,
+        "localEnvironment": "local",
+        "devEnvironment": "dev",
+        "stageEnvironment": "stage",
+        "prodEnvironment": "prod"
+    }
+}

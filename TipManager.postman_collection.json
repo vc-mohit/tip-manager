@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "ee5d2fb1-e219-4122-a752-8a8d7cea9252",
+		"name": "TipManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "mohit",
+							"type": "text"
+						},
+						{
+							"key": "emailId",
+							"value": "mohitsisodiya76@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Mohit@123",
+							"type": "text"
+						},
+						{
+							"key": "profilePicture",
+							"type": "file",
+							"src": "/home/i0059/Downloads/kids.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/signup",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"emailId\": \"mohitsisodiya76@gmail.com\",\n    \"password\": \"Mohit@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Tip",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzM5NTM1MjIsImVtYWlsSWQiOiJtb2hpdHNpc29kaXlhNzZAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE2MzM4NjcxMjJ9.SoUSmUuxKcp5VW4LIiwLM2NwEHvq6GyQshl-xsxMnMU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"emailId\": \"mohitsisodiya76@gmail.com\",\n    \"placeName\": \"Hotel Paradise\",\n    \"placeAddress\": \"Indore, M.P.\",\n    \"totalAmount\": 2400,\n    \"tipPercentage\": 15\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tip/calculate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tip",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tips",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzM5NTM1MjIsImVtYWlsSWQiOiJtb2hpdHNpc29kaXlhNzZAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE2MzM4NjcxMjJ9.SoUSmUuxKcp5VW4LIiwLM2NwEHvq6GyQshl-xsxMnMU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tip/getalltips",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tip",
+						"getalltips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tips As per Filters",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzM5NTM1MjIsImVtYWlsSWQiOiJtb2hpdHNpc29kaXlhNzZAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE2MzM4NjcxMjJ9.SoUSmUuxKcp5VW4LIiwLM2NwEHvq6GyQshl-xsxMnMU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tip?analyticsType&startDate=11-10-2021&endDate=12-10-2021",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tip"
+					],
+					"query": [
+						{
+							"key": "analyticsType",
+							"value": null
+						},
+						{
+							"key": "startDate",
+							"value": "11-10-2021"
+						},
+						{
+							"key": "endDate",
+							"value": "12-10-2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile Picture",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzQwMjAxNDMsImVtYWlsSWQiOiJtb2hpdHNpc29kaXlhNzZAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE2MzM5MzM3NDN9.LgY5aVrfVQ3aCYiXezQWZEXyiqs3ezBYBZLWQ_x4W_M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/public/user/mohitsisodiya76@gmail.com",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"public",
+						"user",
+						"mohitsisodiya76@gmail.com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:4500"
+		}
+	]
+}
